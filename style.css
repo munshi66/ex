@@ -1,0 +1,16 @@
+.socialmedia{
+    height: 200px;
+    width: 50px;
+    position: fixed;
+    top: 30%;
+    left: 3px;
+}
+.socialmedia img{
+    height: 50px;
+    width: 50px;
+    padding: 5px 0;
+}
+.socialmedia img:hover{
+    height: 55px;
+    width: 55px;
+}
