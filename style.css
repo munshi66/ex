@@ -4,6 +4,7 @@
     position: fixed;
     top: 30%;
     left: 3px;
+z-index:999;
 }
 .socialmedia img{
     height: 50px;
