@@ -3,8 +3,8 @@
     width: 50px;
     position: fixed;
     top: 30%;
-    left: 3px;
-z-index:999;
+    right: 3px;
+    z-index:999;
 }
 .socialmedia img{
     height: 50px;
@@ -14,4 +14,8 @@ z-index:999;
 .socialmedia img:hover{
     height: 55px;
     width: 55px;
+}
+
+#imag{
+    z-index: 9999;
 }
