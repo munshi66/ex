@@ -136,7 +136,7 @@
       const taxDeduction = interestAmounts * 0.15; // Example: 10% tax on maturity amount
       const netMaturityAmount = balance - taxDeduction;
 
-      document.getElementById('maturityAmount').textContent = `Maturity Amount: ${balance.toFixed(2)} (After Tax: ${netMaturityAmount.toFixed(2)})`;
+      document.getElementById('maturityAmount').textContent = `Maturity Amount: ${balance.toFixed(2)} (After 15% Tax deduct on Interest final maturity amount: ${netMaturityAmount.toFixed(2)})`;
     }
   </script>
 </body>
