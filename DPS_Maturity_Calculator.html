@@ -11,7 +11,7 @@
       background-color: #f4f4f9;
     }
     .container {
-      max-width: 1200px;
+      max-width: 600px;
       margin: auto;
       background: #fff;
       padding: 20px;
@@ -28,7 +28,7 @@
       margin-top: 10px;
     }
     input {
-      width: 98%;
+      width: 100%;
       padding: 10px;
       margin-top: 5px;
       margin-bottom: 15px;
@@ -90,6 +90,7 @@
         <tr>
           <th>Month</th>
           <th>Monthly Contribution</th>
+          <th>Principal Amount</th>
           <th>Interest Earned</th>
           <th>Cumulative Balance</th>
         </tr>
@@ -111,16 +112,19 @@
 
       const monthlyRate = annualRate / 12 / 100;
       let balance = 0;
+      let principal = 0;
       const tableBody = document.querySelector('#amortizationTable tbody');
       tableBody.innerHTML = '';
 
       for (let month = 1; month <= tenure; month++) {
         const interest = balance * monthlyRate;
         balance += installment + interest;
+        principal += installment;
 
         const row = `<tr>
           <td>${month}</td>
           <td>${installment.toFixed(2)}</td>
+          <td>${principal.toFixed(2)}</td>
           <td>${interest.toFixed(2)}</td>
           <td>${balance.toFixed(2)}</td>
         </tr>`;
