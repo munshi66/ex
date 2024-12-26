@@ -28,7 +28,7 @@
       margin-top: 10px;
     }
     input {
-      width: 99%;
+      width: 98%;
       padding: 10px;
       margin-top: 5px;
       margin-bottom: 15px;
@@ -109,7 +109,7 @@
         alert('Please enter valid values for all fields.');
         return;
       }
-
+      let interestAmounts = 0;
       const monthlyRate = annualRate / 12 / 100;
       let balance = 0;
       let principal = 0;
@@ -118,6 +118,7 @@
 
       for (let month = 1; month <= tenure; month++) {
         const interest = balance * monthlyRate;
+        interestAmounts += interest;
         balance += installment + interest;
         principal += installment;
 
@@ -132,7 +133,10 @@
         tableBody.insertAdjacentHTML('beforeend', row);
       }
 
-      document.getElementById('maturityAmount').textContent = `Maturity Amount: ${balance.toFixed(2)}`;
+      const taxDeduction = interestAmounts * 0.15; // Example: 10% tax on maturity amount
+      const netMaturityAmount = balance - taxDeduction;
+
+      document.getElementById('maturityAmount').textContent = `Maturity Amount: ${balance.toFixed(2)} (After Tax: ${netMaturityAmount.toFixed(2)})`;
     }
   </script>
 </body>
